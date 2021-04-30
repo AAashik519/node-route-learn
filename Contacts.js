@@ -10,17 +10,17 @@ class Contacts{
     }
 
     getContactsById(id){
-     return this.contacts.find(contact => contacts.id ==id)
+     return this.contacts.find(contact => contacts.id == id)
     }
 
     creactContact(contact){
         contact.id = this.contacts.length + 1 
-        // this.contacts.push(contact)
+        this.contacts.push(contact)
         return contact
     }
 
     updateContactByid(id,updatedContact){
-     let index = this.contacts.findIndex(contact => contact.id ==id)
+     let index = this.contacts.findIndex(contact => contact.id == id)
 
      this.contacts[index].name = updatedContact.name || this.contacts[index].name
 
@@ -37,7 +37,7 @@ class Contacts{
         
         let deletedObject = this.contacts[index]
 
-        this.contacts=this.contacts.filter(contact =>contact.id !==id)
+        this.contacts=this.contacts.filter(contact => contact.id !==id)
 
         return deletedObject;
  
